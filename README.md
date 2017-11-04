@@ -17,10 +17,37 @@ Doubly linked list implementation for JavaScript with iterator and array-like in
 
 ## Methods
 
-* [`Doubly.prototype.concat()`](#Doublyprototypeconcat) 
-* [`Doubly.prototype.every()`](#Doublyprototypeevery)
+* [`DoublyLinked.prototype.concat()`](#doublylinkedprototypeconcat)
+* [`DoublyLinked.prototype.entries()`](#doublylinkedprototypeentries) 
+* [`DoublyLinked.prototype.every()`](#doublylinkedprototypeevery)
+* [`DoublyLinked.prototype.everyRight()`](#doublylinkedprototypeeveryright)
+* [`DoublyLinked.prototype.filter()`](#doublylinkedprototypefilter)
+* [`DoublyLinked.prototype.find()`](#doublylinkedprototypefind)
+* [`DoublyLinked.prototype.forEach()`](#doublylinkedprototypeforeach)
+* [`DoublyLinked.prototype.forEachRight()`](#doublylinkedprototypeforeachright)
+* [`DoublyLinked.prototype.includes()`](#doublylinkedprototypeincludes)
+* [`DoublyLinked.prototype.insert()`](#doublylinkedprototypeinsert)
+* [`DoublyLinked.prototype.join()`](#doublylinkedprototypejoin)
+* [`DoublyLinked.prototype.map()`](#doublylinkedprototypemap)
+* [`DoublyLinked.prototype.next()`](#doublylinkedprototypenext)
+* [`DoublyLinked.prototype.prev()`](#doublylinkedprototypeprev)
+* [`DoublyLinked.prototype.pop()`](#doublylinkedprototypepop)
+* [`DoublyLinked.prototype.push()`](#doublylinkedprototypepush)
+* [`DoublyLinked.prototype.reduce()`](#doublylinkedprototypereduce)
+* [`DoublyLinked.prototype.reduce()`](#doublylinkedprototypereduce)
+* [`DoublyLinked.prototype.reduceRight()`](#doublylinkedprototypereduceright)
+* [`DoublyLinked.prototype.remove()`](#doublylinkedprototyperemove)
+* [`DoublyLinked.prototype.reset()`](#doublylinkedprototypereset)
+* [`DoublyLinked.prototype.reverse()`](#doublylinkedprototypereverse)
+* [`DoublyLinked.prototype.shift()`](#doublylinkedprototypeshift)
+* [`DoublyLinked.prototype.some()`](#doublylinkedprototypesome)
+* [`DoublyLinked.prototype.someRight()`](#doublylinkedprototypesomeright)
+* [`DoublyLinked.prototype.toArray()`](#doublylinkedprototypetoarray)
+* [`DoublyLinked.prototype.toString()`](#doublylinkedprototypetostring)
+* [`DoublyLinked.prototype.unshift()`](#doublylinkedprototypeunshift)
+* [`DoublyLinked.prototype[@@Symbol.iterator]`](#doublylinkedprototypesymboliterator)
 
-### Doubly.prototype.concat()
+### DoublyLinked.prototype.concat()
 
 Merges cursor list with and given lists/values into new list.
 
@@ -35,7 +62,7 @@ list.concat(otherList1[, element1[, ...[otherList2]]])
 
 
 
-### Doubly.prototype.every()
+### DoublyLinked.prototype.every()
 
 Tests whether all elements in the list pass the test implemented by the provided function (from left to right)
 
