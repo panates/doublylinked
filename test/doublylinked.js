@@ -427,12 +427,33 @@ describe('Iteration', function() {
     assert(true);
   });
 
-  it('should reverse() create new list with reversed order', function() {
+  it('should remove() find and remove node', function() {
+    const l = new DoublyLinked(1, 2, 3, 4, 5);
+    assert.equal(l.length, 5);
+    assert.equal(l.remove(4), 4);
+    assert.equal(l.length, 4);
+    assert.equal(l.cursor.value, 5);
+    assert.equal(l.remove(5), 5);
+    assert.equal(l.length, 3);
+    assert.equal(l.cursor.value, 3);
+    assert.equal(l.remove(1), 1);
+    assert.equal(l.length, 2);
+    assert.equal(l.cursor.value, 2);
+  });
+
+  it('should remove() do nothing if element is not found', function() {
+    const l = new DoublyLinked(1, 2, 3, 4, 5);
+    assert.equal(l.length, 5);
+    assert.equal(l.remove(10), undefined);
+    assert.equal(l.length, 5);
+  });
+
+  it('should reverse() change the elements order in place', function() {
     const l = new DoublyLinked(1, 2, 3);
-    const l2 = l.reverse();
-    assert.equal(l2.next(), 3);
-    assert.equal(l2.next(), 2);
-    assert.equal(l2.next(), 1);
+    l.reverse();
+    assert.equal(l.next(), 3);
+    assert.equal(l.next(), 2);
+    assert.equal(l.next(), 1);
   });
 
   it('should toArray() create new array filled with list values', function() {
@@ -548,6 +569,20 @@ describe('Iteration', function() {
       return done();
     }
     assert(true);
+  });
+
+  it('should toString() returns string represtation', function() {
+    const l = new DoublyLinked(1, 2, 'a', 'b');
+    assert.equal(l.toString(), 'DoublyLinked(1,2,a,b)');
+  });
+
+  it('should entries() returns an Iterator object', function() {
+    const iterator = list.entries();
+    assert.equal(iterator.value, undefined);
+    for (var i = 0; i < 10; i++) {
+      assert.equal(iterator.next(), i);
+    }
+    assert.equal(iterator.next(), undefined);
   });
 
 });

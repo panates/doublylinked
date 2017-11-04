@@ -9,86 +9,73 @@
 
 ## About
 
-Doubly Circular linked list implementation for JavaScript with iterator and array-like interface
+Doubly linked list implementation for JavaScript with iterator and array-like interface
 
 ## Installation
 
-  - `npm install doublylinked --save`
+  - `$ npm install doublylinked [--save]`
 
-## Simple example
+## Methods
+
+* [`Doubly.prototype.concat()`](#Doublyprototypeconcat) 
+* [`Doubly.prototype.every()`](#Doublyprototypeevery)
+
+### Doubly.prototype.concat()
+
+Merges cursor list with and given lists/values into new list.
 
 ```js
-
-}
-
-
+list.concat(otherList1[, element1[, ...[otherList2]]])
 ```
+##### Parameters
 
-**tasks:** An array of functions to run.
+- *valueN :* Lists and/or values to concatenate into a new list
 
-**callback:** An optional callback to run once all the functions have completed. This will be passed the results of the last task's callback.
+- *Return value :* A new DoublyLinked instance
 
-Each function calls callback(err, result1, result2, ...) to step through next function in array. Callback's first argument must be error or null. After than first argument values are moved to next functions. If error value is not null, waterfall skips next functions and calls result callback. 
 
-```javascript
-const waterfall = require('doublylinked');
-waterfall([
-  function(next) {
-    console.log('started');
-    next(null, 1, 2);
-  },
-  function(next, arg1, arg2) {
-    let sum = arg1 + arg2;
-    console.log('Current sum: ', sum);
-    next(null, sum, 3, 4);
-  },
-  function(next, arg1, arg2, arg3) {
-    let sum = arg1 + arg2 + arg3;
-    console.log('Current sum: ', sum);
-    // arg1 now equals 'three'
-    next(null, sum + 10);
-  }
-], function(err, result) {
-  if (err)
-    console.error(err);
-  else
-    console.log('Result: ', result);
-});
+
+### Doubly.prototype.every()
+
+Tests whether all elements in the list pass the test implemented by the provided function (from left to right)
+
+```js
+list.every(callback[, thisArg])
 ```
-Result output
-```
-started
-Current sum:  3
-Current sum:  10
-Result:  20
-```
+##### Parameters
 
-`waterfall.every(array, fn, callback)`
+- *callback :* Function to test for each element, taking three arguments:
+    
+    - *currentValue :* The current element being processed in the list
+    
+    - *index :* The index of the current element being processed in the list
+    
+    - *list :* The list every was called upon
 
-**array:** Any array
+- *thisArg :* Value to use as this when executing callback
 
-**fn:** Function to be called for every value. `fn(next, value, index)
+- *Return value :* true if the callback function returns a truthy value for every list element; otherwise, false
 
-**callback:** An optional callback to run once iteration completed.
 
- 
 
-```javascript
-const waterfall = require('doublylinked');
-var total = 0;
-waterfall.every([1, 2, 3, 4],
-    function(next, val) {
-      total += val;
-      next(null);
-    },
-    function(err) {
-      console.log('Total: ' + total);      
-    });
-```
-Result output
-```
-Total: 10
-```
+## Properties
+
+#### cursor
+
+Returns current located node of the list
+
+#### head
+
+Returns first node of the list
+
+#### length
+
+Returns the element count of the list
+
+#### head
+
+Returns last node of the list
+
 ## Node Compatibility
 
   - node `>= 4.0`;

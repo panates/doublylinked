@@ -1,6 +1,6 @@
 {
   "name": "doublylinked",
-  "description": "Doubly linked list implementation for JavaScript with array-like interface",
+  "description": "Doubly linked list implementation for JavaScript with iterator and array-like interface",
   "version": "1.0.0",
   "author": "Panates Ltd.",
   "contributors": [
