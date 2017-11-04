@@ -15,6 +15,17 @@ Doubly linked list implementation for JavaScript with iterator and array-like in
 
   - `$ npm install doublylinked [--save]`
 
+## Constructor
+
+```js
+const list = new DoublyLinked([element1[, ..[, elementN]]]);
+```
+
+##### Parameters
+
+- *elementN :* The elements will list contains
+
+
 ## Methods
 
 * [`DoublyLinked.prototype.concat()`](#doublylinkedprototypeconcat)
