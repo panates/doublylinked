@@ -362,6 +362,131 @@ Applies a function against an accumulator and each element in the list (from rig
 - *Return value :* The value that results from the reduction
 
 
+### DoublyLinked.prototype.reset()
+
+Resets cursor to head
+
+`list.reset()`
+
+##### Parameters
+
+- *Return value :* Returns the DoublyLinked instance which this method is called
+
+
+
+### DoublyLinked.prototype.reverse()
+
+Reverses a list in place. The first array element becomes the last, and the last list element becomes the first
+
+`list.reverse()`
+
+##### Parameters
+
+- *Return value :* Returns the DoublyLinked instance which this method is called
+
+
+### DoublyLinked.prototype.shift()
+
+Removes the first element from the list and returns that element
+
+`list.shift()`
+
+##### Parameters
+
+- *Return value :* The removed element from the list; undefined if the list is empty
+
+
+
+### DoublyLinked.prototype.some()
+
+Tests whether all elements in the list pass the test implemented by the provided function (from left to right)
+
+`list.some(callback[, thisArg])`
+
+##### Parameters
+
+- *callback :* Function to test for each element, taking three arguments:
+    
+    - *currentValue :* The current element being processed in the list
+    
+    - *index :* The index of the current element being processed in the list
+    
+    - *list :* The list every was called upon
+
+- *thisArg :* Value to use as this when executing callback
+
+- *Return value :* Value to use as this when executing callback
+
+
+
+### DoublyLinked.prototype.someRight()
+
+Tests whether all elements in the list pass the test implemented by the provided function (from right to left)
+
+`list.someRight(callback[, thisArg])`
+
+##### Parameters
+
+- *callback :* Function to test for each element, taking three arguments:
+    
+    - *currentValue :* The current element being processed in the list
+    
+    - *index :* The index of the current element being processed in the list
+    
+    - *list :* The list every was called upon
+
+- *thisArg :* Value to use as this when executing callback
+
+- *Return value :* Value to use as this when executing callback
+
+
+### DoublyLinked.prototype.toArray()
+
+Returns a new array containing elements of the list
+
+`list.toArray()`
+
+##### Parameters
+
+- *Return value :* A new Array instance contains elements of the list
+
+
+
+### DoublyLinked.prototype.toString()
+
+Returns a string representing the specified list and its elements
+
+`list.toString()`
+
+##### Parameters
+
+- *Return value :* Returns a string representing the specified list and its elements.
+
+
+
+### DoublyLinked.prototype.unshift()
+
+Adds one or more elements to the beginning of the list the new length of the list
+
+`list.unshift(element1[, ...[, elementN]])`
+
+##### Parameters
+
+- *elementN :* The elements to add to the front of the list
+    
+- *Return value :* The new length of the list
+
+
+### DoublyLinked.prototype[@@Symbol.iterator]()
+
+Returns the iterator object contains entries
+
+`list.unshift(element1[, ...[, elementN]])`
+
+##### Parameters
+    
+- *Return value :* Returns the iterator object contains entries
+
 
 
 ## Properties
