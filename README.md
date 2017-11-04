@@ -286,7 +286,7 @@ Moves cursor to the previous and returns its value
 
 ##### Parameters
 
-* @return {*} - Returns value of previous node to the cursor. If cursor reaches to the head it returns undefined
+- *Return value :* Returns value of previous node to the cursor. If cursor reaches to the head it returns undefined
 
 
 
@@ -298,7 +298,7 @@ Removes the last element from the list and returns that element
 
 ##### Parameters
 
-* @return {*} - The removed element from the list; undefined if the list is empty.
+- *Return value :* The removed element from the list; undefined if the list is empty.
 
 
 
