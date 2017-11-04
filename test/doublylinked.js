@@ -585,4 +585,23 @@ describe('Iteration', function() {
     assert.equal(iterator.next(), undefined);
   });
 
+  it('should remove with node.remove() method', function() {
+    const l = new DoublyLinked(1, 2, 3, 4);
+    assert.equal(l.length, 4);
+    l.next();
+    l.next();
+    var c = l.cursor;
+    c.remove();
+    assert.equal(l.length, 3);
+    assert.equal(l.cursor.value, 3);
+    c.remove();
+    assert.equal(l.length, 3);
+    assert.equal(l.cursor.value, 3);
+    c = l.cursor;
+    l.next();
+    c.remove();
+    assert.equal(l.length, 2);
+    assert.equal(l.cursor.value, 4);
+  });
+
 });
