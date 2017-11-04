@@ -379,6 +379,8 @@ describe('Iteration', function() {
     assert.equal(l.length, 0);
     assert.equal(l.pop(), undefined);
     assert.equal(l.length, 0);
+    assert.equal(l.head, undefined);
+    assert.equal(l.tail, undefined);
   });
 
   it('should reduce() iterate all nodes set accumulator (left to right)', function() {
@@ -475,6 +477,8 @@ describe('Iteration', function() {
     assert.equal(l.length, 0);
     assert.equal(l.shift(), undefined);
     assert.equal(l.length, 0);
+    assert.equal(l.head, undefined);
+    assert.equal(l.tail, undefined);
   });
 
   it('should some() continue iteration while callback returns false', function() {
