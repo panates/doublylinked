@@ -13,7 +13,7 @@ Doubly linked list implementation for JavaScript with iterator and array-like in
 
 ## Installation
 
-  - `$ npm install doublylinked [--save]`
+`$ npm install doublylinked [--save]`
 
 ## Constructor
 
@@ -488,11 +488,11 @@ Adds one or more elements to the beginning of the list the new length of the lis
 - *Return value :* The new length of the list
 
 
-### DoublyLinked.prototype[@@Symbol.iterator]()
+### DoublyLinked.prototype\[@@Symbol.iterator\]
 
 Returns the iterator object contains entries
 
-`list.unshift(element1[, ...[, elementN]])`
+`const iterator = list[Symbol.iterator]`
 
 ##### Parameters
     
