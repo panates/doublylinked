@@ -58,6 +58,16 @@ describe('Iteration', function() {
     assert.equal(list.prev(), undefined);
   });
 
+  it('should prev() return last element after eof', function() {
+    assert.equal(list.cursor, undefined);
+    for (var i = 0; i < 10; i++) {
+      assert.equal(list.next(), i);
+    }
+    assert.equal(list.next(), undefined);
+    assert.equal(list.next(), undefined);
+    assert.equal(list.prev(), 9);
+  });
+
   it('should concat() other list', function() {
     const source = new DoublyLinked(1, 2);
     const other = new DoublyLinked('a', 'b', 'c');
