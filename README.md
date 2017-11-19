@@ -56,7 +56,7 @@ const list = new DoublyLinked([element1[, ..[, elementN]]]);
 * [`DoublyLinked.prototype.toArray()`](#doublylinkedprototypetoarray)
 * [`DoublyLinked.prototype.toString()`](#doublylinkedprototypetostring)
 * [`DoublyLinked.prototype.unshift()`](#doublylinkedprototypeunshift)
-* [`DoublyLinked.prototype[@@Symbol.iterator]`](#doublylinkedprototypesymboliterator)
+* [`DoublyLinked.prototype[@@iterator]`](#doublylinkedprototypeiterator)
 
 ### DoublyLinked.prototype.concat()
 
@@ -488,11 +488,17 @@ Adds one or more elements to the beginning of the list the new length of the lis
 - *Return value :* The new length of the list
 
 
-### DoublyLinked.prototype\[@@Symbol.iterator\]
+### DoublyLinked.prototype\[@@iterator\]
 
 Returns the iterator object contains entries
 
 `const iterator = list[Symbol.iterator]`
+
+```js
+for (var val in list) {
+  ...
+}
+```
 
 ##### Parameters
     
