@@ -492,7 +492,7 @@ Adds one or more elements to the beginning of the list the new length of the lis
 
 Returns the iterator object contains entries
 
-`const iterator = list[Symbol.iterator]`
+`const iterator = list[Symbol.iterator]()`
 
 ```js
 for (var val in list) {
