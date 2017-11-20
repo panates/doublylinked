@@ -594,9 +594,16 @@ describe('Iteration', function() {
     const iterator = list.entries();
     assert.equal(iterator.value, undefined);
     for (var i = 0; i < 10; i++) {
-      assert.equal(iterator.next(), i);
+      assert.equal(iterator.next().value, i);
     }
-    assert.equal(iterator.next(), undefined);
+    assert.equal(iterator.next().value, undefined);
+  });
+
+  it('should iterate with for/of', function() {
+    var k = 0;
+    for (var i of list) {
+      assert.equal(i, k++);
+    }
   });
 
   it('should remove with node.remove() method', function() {
