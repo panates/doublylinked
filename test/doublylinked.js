@@ -601,6 +601,7 @@ describe('Iteration', function() {
 
   it('should iterate with for/of', function() {
     var k = 0;
+    // noinspection JSAnnotator
     for (var i of list) {
       assert.equal(i, k++);
     }
