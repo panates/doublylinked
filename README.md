@@ -495,7 +495,7 @@ Returns the iterator object contains entries
 `const iterator = list[Symbol.iterator]()`
 
 ```js
-for (var val in list) {
+for (const val in list) {
   ...
 }
 ```
@@ -526,7 +526,7 @@ Returns last node of the list
 
 ## Node Compatibility
 
-  - node `>= 4.0`;
+  - node `>= 6.0`;
   
 ### License
 [MIT](LICENSE)
