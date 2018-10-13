@@ -1,7 +1,7 @@
 {
   "name": "doublylinked",
   "description": "Doubly linked list implementation for JavaScript with iterator and array-like interface",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Panates Ltd.",
   "contributors": [
     "Eray Hanoglu <e.hanoglu@panates.com>"
@@ -21,7 +21,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.7.0",
     "eslint-config-google": "^0.10.0",
-    "istanbul": "^0.4.5",
+    "nyc": "^13.0.1",
     "mocha": "^5.2.0"
   },
   "engines": {
