@@ -13,7 +13,6 @@ before_install:
   - "test ! -d node_modules || npm prune"
   - "test ! -d node_modules || npm rebuild"
 script:
-  - "npm install"
   - "npm run-script travis-cover"
 after_script:
 - "npm install coveralls && cat ./coverage/lcov.info | coveralls"
