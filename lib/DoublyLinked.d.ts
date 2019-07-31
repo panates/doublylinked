@@ -21,7 +21,7 @@ declare module 'doublylinked' {
 
         readonly head: Node;
 
-        readonly length: Node;
+        readonly length: number;
 
         readonly tail: Node;
 
