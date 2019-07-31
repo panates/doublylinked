@@ -520,12 +520,22 @@ describe('Iteration', function() {
   });
 
   it('should entries() returns an Iterator object', function() {
-    const iterator = list.entries();
-    assert.strictEqual(iterator.value, undefined);
-    for (let i = 0; i < 10; i++) {
-      assert.strictEqual(iterator.next().value, i);
+    for (const [i, v] of list.entries()) {
+      assert.strictEqual(v, i);
     }
-    assert.strictEqual(iterator.next().value, undefined);
+  });
+
+  it('should keys() returns an Iterator object', function() {
+    for (const [i, v] of list.keys()) {
+      assert.strictEqual(v, i);
+    }
+  });
+
+  it('should values() returns an Iterator object', function() {
+    let i = 0;
+    for (const v of list.values()) {
+      assert.strictEqual(v, i++);
+    }
   });
 
   it('should iterate with for/of', function() {
