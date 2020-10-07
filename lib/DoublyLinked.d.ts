@@ -69,6 +69,8 @@ declare module 'doublylinked' {
 
         shift(): any;
 
+        slice(start?: number, end?: number): any[];
+
         some(callback: (element: any, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
 
         someRight(callback: (element: any, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;

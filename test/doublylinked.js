@@ -386,6 +386,7 @@ describe('Iteration', function() {
     const l = new DoublyLinked(1, 2, 3, 4, 5);
     assert.strictEqual(l.length, 5);
     assert.strictEqual(l.remove(4), 4);
+    assert.deepStrictEqual(l.toArray(), [1, 2, 3, 5]);
     assert.strictEqual(l.length, 4);
     assert.strictEqual(l.cursor.value, 5);
     assert.strictEqual(l.remove(5), 5);
@@ -432,6 +433,14 @@ describe('Iteration', function() {
     assert.strictEqual(l.length, 0);
     assert.strictEqual(l.head, undefined);
     assert.strictEqual(l.tail, undefined);
+  });
+
+  it('should slice() return swallow copy as array', function() {
+    const l = new DoublyLinked(1, 2, 3, 4);
+    assert.deepStrictEqual(l.slice(), [1, 2, 3, 4]);
+    assert.deepStrictEqual(l.slice(1), [2, 3, 4]);
+    assert.deepStrictEqual(l.slice(0, 2), [1, 2, 3]);
+    assert.deepStrictEqual(l.slice(1, 2), [2, 3]);
   });
 
   it('should some() continue iteration while callback returns false', function() {
