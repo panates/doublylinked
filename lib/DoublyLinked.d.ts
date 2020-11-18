@@ -10,8 +10,8 @@ declare module 'doublylinked' {
         readonly next?: Node;
     }
 
-    export default class DoublyLinked {
-        constructor(...element: any[]);
+    export default class DoublyLinked<T = any> {
+        constructor(...element: T[]);
 
         readonly cursor: Node;
 
@@ -21,65 +21,65 @@ declare module 'doublylinked' {
 
         readonly tail: Node;
 
-        concat(...element: any[]): DoublyLinked;
+        concat(...element: T[]): DoublyLinked;
 
-        entries(): IterableIterator<[number, any]>;
+        entries(): IterableIterator<[number, T]>;
 
         keys(): IterableIterator<number>;
 
-        values(): IterableIterator<any>;
+        values(): IterableIterator<T>;
 
-        every(callback: (element: any, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
+        every(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
 
-        everyRight(callback: (element: any, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
+        everyRight(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
 
-        filter(callback: (element: any, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): DoublyLinked;
+        filter(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): DoublyLinked;
 
-        find(callback: (element: any, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): any;
+        find(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): T;
 
-        forEach(callback: (element: any, index?: number, thisArg?: any) => void, thisArg?: any): void;
+        forEach(callback: (element: T, index?: number, thisArg?: any) => void, thisArg?: any): void;
 
-        forEachRight(callback: (element: any, index?: number, thisArg?: any) => void, thisArg?: any): void;
+        forEachRight(callback: (element: T, index?: number, thisArg?: any) => void, thisArg?: any): void;
 
-        includes(element: any, fromIndex?: number): boolean;
+        includes(element: T, fromIndex?: number): boolean;
 
-        insert(...element: any[]): number;
+        insert(...element: T[]): number;
 
         join(separator): string;
 
-        map(callback: (element: any, index?: number, thisArg?: any) => void): DoublyLinked;
+        map(callback: (element: T, index?: number, thisArg?: any) => void): DoublyLinked;
 
-        next(): any;
+        next(): T;
 
-        pop(): any;
+        pop(): T;
 
-        prev(): any;
+        prev(): T;
 
-        push(...element: any[]): number;
+        push(...element: T[]): number;
 
-        reduce(callback: (accumulator: any, element: any, index?: number, thisArg?: any) => any, initialValue?: any): any;
+        reduce(callback: (accumulator: any, element: T, index?: number, thisArg?: any) => any, initialValue?: any): any;
 
-        reduceRight(callback: (accumulator: any, element: any, index?: number, thisArg?: any) => any, initialValue?: any): any;
+        reduceRight(callback: (accumulator: any, element: T, index?: number, thisArg?: any) => any, initialValue?: any): any;
 
-        remove(element: any, fromIndex?: number): any;
+        remove(element: T, fromIndex?: number): any;
 
         reset(): DoublyLinked;
 
         reverse(): DoublyLinked;
 
-        shift(): any;
+        shift(): T;
 
-        slice(start?: number, end?: number): any[];
+        slice(start?: number, end?: number): T[];
 
-        some(callback: (element: any, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
+        some(callback: (element: T, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
 
-        someRight(callback: (element: any, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
+        someRight(callback: (element: T, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
 
-        toArray(): any[];
+        toArray(): T[];
 
         toString(): string;
 
-        unshift(...element: any[]): number;
+        unshift(...element: T[]): number;
 
     }
 
