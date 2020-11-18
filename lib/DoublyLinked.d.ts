@@ -9,9 +9,11 @@ declare module 'doublylinked' {
             value: any;
             readonly prev?: Node;
             readonly next?: Node;
-        }    
+
+            remove(): void;
+        }
     }
-    
+
     export default class DoublyLinked<T = any> {
         constructor(...element: T[]);
 
