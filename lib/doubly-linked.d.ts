@@ -1,6 +1,6 @@
 /// <reference lib="es2015.symbol" />
 
-declare module 'doublylinked' {
+declare module 'lib/doubly-linked' {
 
     type Maybe<T> = T | void;
 
