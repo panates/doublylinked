@@ -25,7 +25,7 @@ declare module 'doublylinked' {
 
         readonly tail: DoublyLinked.Node;
 
-        concat(...element: T[]): DoublyLinked;
+        concat(...element: T[]): DoublyLinked<T>;
 
         entries(): IterableIterator<[number, T]>;
 
@@ -37,7 +37,7 @@ declare module 'doublylinked' {
 
         everyRight(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
 
-        filter(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): DoublyLinked;
+        filter(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): DoublyLinked<T>;
 
         find(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): T;
 
@@ -51,7 +51,7 @@ declare module 'doublylinked' {
 
         join(separator): string;
 
-        map(callback: (element: T, index?: number, thisArg?: any) => void): DoublyLinked;
+        map(callback: (element: T, index?: number, thisArg?: any) => void): DoublyLinked<T>;
 
         next(): T;
 
@@ -67,9 +67,9 @@ declare module 'doublylinked' {
 
         remove(element: T, fromIndex?: number): any;
 
-        reset(): DoublyLinked;
+        reset(): DoublyLinked<T>;
 
-        reverse(): DoublyLinked;
+        reverse(): DoublyLinked<T>;
 
         shift(): T;
 
