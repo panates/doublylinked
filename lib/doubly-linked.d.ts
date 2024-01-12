@@ -2,89 +2,89 @@
 
 declare module 'doublylinked' {
 
-    type Maybe<T> = T | void;
+  type Maybe<T> = T | void;
 
-    export namespace DoublyLinked {
-        export interface Node {
-            value: any;
-            readonly prev?: Node;
-            readonly next?: Node;
+  export namespace DoublyLinked {
+    export interface Node {
+      value: any;
+      readonly prev?: Node;
+      readonly next?: Node;
 
-            remove(): void;
-        }
+      remove(): void;
     }
+  }
 
-    export default class DoublyLinked<T = any> {
-        constructor(...element: T[]);
+  export default class DoublyLinked<T = any> {
+    constructor(...element: T[]);
 
-        readonly cursor: DoublyLinked.Node;
+    readonly cursor: DoublyLinked.Node;
 
-        readonly head: DoublyLinked.Node;
+    readonly head: DoublyLinked.Node;
 
-        readonly length: number;
+    readonly length: number;
 
-        readonly tail: DoublyLinked.Node;
+    readonly tail: DoublyLinked.Node;
 
-        concat(...element: T[]): DoublyLinked<T>;
+    concat(...element: T[]): DoublyLinked<T>;
 
-        entries(): IterableIterator<[number, T]>;
+    entries(): IterableIterator<[number, T]>;
 
-        keys(): IterableIterator<number>;
+    keys(): IterableIterator<number>;
 
-        values(): IterableIterator<T>;
+    values(): IterableIterator<T>;
 
-        every(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
+    every(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
 
-        everyRight(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
+    everyRight(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
 
-        filter(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): DoublyLinked<T>;
+    filter(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): DoublyLinked<T>;
 
-        find(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): T;
+    find(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): T;
 
-        forEach(callback: (element: T, index?: number, thisArg?: any) => void, thisArg?: any): void;
+    forEach(callback: (element: T, index?: number, thisArg?: any) => void, thisArg?: any): void;
 
-        forEachRight(callback: (element: T, index?: number, thisArg?: any) => void, thisArg?: any): void;
+    forEachRight(callback: (element: T, index?: number, thisArg?: any) => void, thisArg?: any): void;
 
-        includes(element: T, fromIndex?: number): boolean;
+    includes(element: T, fromIndex?: number): boolean;
 
-        insert(...element: T[]): number;
+    insert(...element: T[]): number;
 
-        join(separator): string;
+    join(separator: string): string;
 
-        map(callback: (element: T, index?: number, thisArg?: any) => void): DoublyLinked<T>;
+    map(callback: (element: T, index?: number, thisArg?: any) => void): DoublyLinked<T>;
 
-        next(): T;
+    next(): T;
 
-        pop(): T;
+    pop(): T;
 
-        prev(): T;
+    prev(): T;
 
-        push(...element: T[]): number;
+    push(...element: T[]): number;
 
-        reduce(callback: (accumulator: any, element: T, index?: number, thisArg?: any) => any, initialValue?: any): any;
+    reduce(callback: (accumulator: any, element: T, index?: number, thisArg?: any) => any, initialValue?: any): any;
 
-        reduceRight(callback: (accumulator: any, element: T, index?: number, thisArg?: any) => any, initialValue?: any): any;
+    reduceRight(callback: (accumulator: any, element: T, index?: number, thisArg?: any) => any, initialValue?: any): any;
 
-        remove(element: T, fromIndex?: number): any;
+    remove(element: T, fromIndex?: number): any;
 
-        reset(): DoublyLinked<T>;
+    reset(): DoublyLinked<T>;
 
-        reverse(): DoublyLinked<T>;
+    reverse(): DoublyLinked<T>;
 
-        shift(): T;
+    shift(): T;
 
-        slice(start?: number, end?: number): T[];
+    slice(start?: number, end?: number): T[];
 
-        some(callback: (element: T, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
+    some(callback: (element: T, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
 
-        someRight(callback: (element: T, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
+    someRight(callback: (element: T, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
 
-        toArray(): T[];
+    toArray(): T[];
 
-        toString(): string;
+    toString(): string;
 
-        unshift(...element: T[]): number;
+    unshift(...element: T[]): number;
 
-    }
+  }
 
 }
