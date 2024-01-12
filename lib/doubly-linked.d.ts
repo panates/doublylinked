@@ -49,7 +49,7 @@ declare module 'doublylinked' {
 
     insert(...element: T[]): number;
 
-    join(separator: string): string;
+    join(separator:string): string;
 
     map(callback: (element: T, index?: number, thisArg?: any) => void): DoublyLinked<T>;
 
