@@ -18,10 +18,11 @@
     "doubly linked list"
   ],
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-google": "^0.14.0",
-    "mocha": "^10.2.0",
-    "nyc": "^15.1.0"
+    "@panates/eslint-config": "^1.0.3",
+    "@panates/eslint-config-ts": "^1.0.3",
+    "@panates/tsconfig": "^1.0.3",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0"
   },
   "engines": {
     "node": ">= 10.0"
@@ -34,12 +35,14 @@
     "README.md",
     "lib/"
   ],
-  "nyc": {
-    "temp-directory": "./coverage/.nyc_output"
-  },
   "scripts": {
-    "test": "mocha --require ./test/support/env --reporter spec --bail --check-leaks test/",
-    "cover": "nyc --reporter html --reporter text npm run test",
-    "travis-cover": "nyc --reporter lcovonly npm run test"
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --max-warnings=0 --fix",
+    "format": "prettier . --write --log-level=warn",
+    "test": "jest",
+    "precover": "rimraf coverage",
+    "cover": "jest --runInBand --detectOpenHandles --coverage",
+    "precitest": "rimraf coverage",
+    "citest": "jest --coverage --coverageReporters=lcov"
   }
 }
