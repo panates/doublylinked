@@ -1,7 +1,6 @@
 /// <reference lib="es2015.symbol" />
 
 declare module 'doublylinked' {
-
   type Maybe<T> = T | void;
 
   export namespace DoublyLinked {
@@ -33,25 +32,45 @@ declare module 'doublylinked' {
 
     values(): IterableIterator<T>;
 
-    every(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
+    every(
+      callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>,
+      thisArg?: any,
+    ): boolean;
 
-    everyRight(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): boolean;
+    everyRight(
+      callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>,
+      thisArg?: any,
+    ): boolean;
 
-    filter(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): DoublyLinked<T>;
+    filter(
+      callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>,
+      thisArg?: any,
+    ): DoublyLinked<T>;
 
-    find(callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>, thisArg?: any): T;
+    find(
+      callback: (element: T, index?: number, thisArg?: any) => Maybe<boolean>,
+      thisArg?: any,
+    ): T;
 
-    forEach(callback: (element: T, index?: number, thisArg?: any) => void, thisArg?: any): void;
+    forEach(
+      callback: (element: T, index?: number, thisArg?: any) => void,
+      thisArg?: any,
+    ): void;
 
-    forEachRight(callback: (element: T, index?: number, thisArg?: any) => void, thisArg?: any): void;
+    forEachRight(
+      callback: (element: T, index?: number, thisArg?: any) => void,
+      thisArg?: any,
+    ): void;
 
     includes(element: T, fromIndex?: number): boolean;
 
     insert(...element: T[]): number;
 
-    join(separator:string): string;
+    join(separator: string): string;
 
-    map(callback: (element: T, index?: number, thisArg?: any) => void): DoublyLinked<T>;
+    map(
+      callback: (element: T, index?: number, thisArg?: any) => void,
+    ): DoublyLinked<T>;
 
     next(): T;
 
@@ -61,9 +80,25 @@ declare module 'doublylinked' {
 
     push(...element: T[]): number;
 
-    reduce(callback: (accumulator: any, element: T, index?: number, thisArg?: any) => any, initialValue?: any): any;
+    reduce(
+      callback: (
+        accumulator: any,
+        element: T,
+        index?: number,
+        thisArg?: any,
+      ) => any,
+      initialValue?: any,
+    ): any;
 
-    reduceRight(callback: (accumulator: any, element: T, index?: number, thisArg?: any) => any, initialValue?: any): any;
+    reduceRight(
+      callback: (
+        accumulator: any,
+        element: T,
+        index?: number,
+        thisArg?: any,
+      ) => any,
+      initialValue?: any,
+    ): any;
 
     remove(element: T, fromIndex?: number): any;
 
@@ -75,16 +110,20 @@ declare module 'doublylinked' {
 
     slice(start?: number, end?: number): T[];
 
-    some(callback: (element: T, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
+    some(
+      callback: (element: T, index?: number, thisArg?: any) => boolean,
+      thisArg?: any,
+    ): boolean;
 
-    someRight(callback: (element: T, index?: number, thisArg?: any) => boolean, thisArg?: any): boolean;
+    someRight(
+      callback: (element: T, index?: number, thisArg?: any) => boolean,
+      thisArg?: any,
+    ): boolean;
 
     toArray(): T[];
 
     toString(): string;
 
     unshift(...element: T[]): number;
-
   }
-
 }
