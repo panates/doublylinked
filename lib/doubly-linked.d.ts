@@ -4,10 +4,10 @@ declare module 'doublylinked' {
   type Maybe<T> = T | void;
 
   export namespace DoublyLinked {
-    export interface Node {
-      value: any;
-      readonly prev?: Node;
-      readonly next?: Node;
+    export interface Node<T> {
+      value: T;
+      readonly prev?: Node<T>;
+      readonly next?: Node<T>;
 
       remove(): void;
     }
@@ -16,13 +16,13 @@ declare module 'doublylinked' {
   export default class DoublyLinked<T = any> {
     constructor(...element: T[]);
 
-    readonly cursor: DoublyLinked.Node;
+    readonly cursor: DoublyLinked.Node<T>;
 
-    readonly head: DoublyLinked.Node;
+    readonly head: DoublyLinked.Node<T>;
 
     readonly length: number;
 
-    readonly tail: DoublyLinked.Node;
+    readonly tail: DoublyLinked.Node<T>;
 
     concat(...element: T[]): DoublyLinked<T>;
 
