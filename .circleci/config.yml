@@ -22,7 +22,7 @@ workflows:
                 - master
                 - dev
       - test:
-          version: '22'
+          version: '22.13'
           filters:
             branches:
               only:
