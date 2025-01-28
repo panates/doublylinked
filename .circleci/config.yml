@@ -6,6 +6,7 @@ orbs:
 
 workflows:
   main:
+    jobs:
       - test:
           version: '18.17'
           filters:
