@@ -18,15 +18,16 @@
     "doubly linked list"
   ],
   "devDependencies": {
-    "@panates/eslint-config": "^1.0.21",
-    "@panates/eslint-config-ts": "^1.0.21",
-    "@panates/tsconfig": "^1.0.21",
+    "@panates/eslint-config": "^2.0.3",
+    "@panates/eslint-config-ts": "^2.0.3",
+    "@panates/tsconfig": "^2.0.3",
     "@types/jest": "^29.5.14",
+    "globals": "^15.14.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0"
   },
   "engines": {
-    "node": ">= 10.0"
+    "node": ">= 16.0"
   },
   "directories": {
     "lib": "./lib"
